@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,7 +28,11 @@ namespace ConditionExample
             }
             else if(option == 2)
             {
-                int sub = n1 - n2;
+                int sub = 0;
+                if(n1>n2)
+                   sub = n1 - n2;
+         else
+                    sub = n2 - n1;
                 Console.WriteLine($"Substraction is {sub}");
             }
             else if(option == 3)
@@ -37,7 +42,12 @@ namespace ConditionExample
             }
             else if( option == 4)
             {
-                double div = (double)n1/ (double)n2;
+                float div = 0;
+                if ((float) n1 > (float) n2)
+                     div = (float)n1 / (float)n2;
+                else
+                    div = (float)n2 / (float)n1;
+
                 Console.WriteLine($"Division is {div}");
             }
             else
